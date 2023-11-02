@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto Segundo Corte: Referencia del Archivo client.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Proyecto Segundo Corte<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Comunicacion entre usuarios usando sockets</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Buscar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Clases</a> &#124;
+<a href="#func-members">Funciones</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Referencia del Archivo client.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Pograma cliente.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;arpa/inet.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="concurrencia_8h_source.html">concurrencia.h</a>&quot;</code><br />
+<code>#include &lt;errno.h&gt;</code><br />
+<code>#include &lt;netinet/ip.h&gt;</code><br />
+<code>#include &lt;pthread.h&gt;</code><br />
+<code>#include &lt;semaphore.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;sys/socket.h&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="chat_8h_source.html">chat.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Dependencia gráfica adjunta para client.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="client_8c__incl.png" border="0" usemap="#aclient_8c" alt=""/></div>
+<map name="aclient_8c" id="aclient_8c">
+<area shape="rect" title="Pograma cliente." alt="" coords="627,5,697,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,97,107"/>
+<area shape="rect" href="concurrencia_8h.html" title="Definiciones de concurrencia." alt="" coords="173,80,290,107"/>
+<area shape="rect" title=" " alt="" coords="129,155,213,181"/>
+<area shape="rect" title=" " alt="" coords="255,155,362,181"/>
+<area shape="rect" title=" " alt="" coords="365,80,433,107"/>
+<area shape="rect" title=" " alt="" coords="458,80,554,107"/>
+<area shape="rect" title=" " alt="" coords="579,80,652,107"/>
+<area shape="rect" title=" " alt="" coords="677,80,743,107"/>
+<area shape="rect" title=" " alt="" coords="768,80,839,107"/>
+<area shape="rect" title=" " alt="" coords="863,80,933,107"/>
+<area shape="rect" title=" " alt="" coords="957,80,1060,107"/>
+<area shape="rect" title=" " alt="" coords="1085,80,1181,107"/>
+<area shape="rect" title=" " alt="" coords="1205,80,1279,107"/>
+<area shape="rect" href="chat_8h.html" title="Definiciones para el chat." alt="" coords="1304,80,1367,107"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Clases</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmessage.html">message</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructua de un mensaje.  <a href="structmessage.html#details">Más...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a2a08004131aacb551995e4fcb0dfb678"><td class="memItemLeft" align="right" valign="top"><a id="a2a08004131aacb551995e4fcb0dfb678" name="a2a08004131aacb551995e4fcb0dfb678"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>signal_handler</b> ()</td></tr>
+<tr class="memdesc:a2a08004131aacb551995e4fcb0dfb678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subrutina manejadora de señal. <br /></td></tr>
+<tr class="separator:a2a08004131aacb551995e4fcb0dfb678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa412090fdce1edcdab71ae33a3708832"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="client_8c.html#aa412090fdce1edcdab71ae33a3708832">changeStateMs</a> (char linea[MAX_MESSAGE])</td></tr>
+<tr class="memdesc:aa412090fdce1edcdab71ae33a3708832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cambia el estado del mensaje segun el comando ingresado.  <a href="client_8c.html#aa412090fdce1edcdab71ae33a3708832">Más...</a><br /></td></tr>
+<tr class="separator:aa412090fdce1edcdab71ae33a3708832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a987b6f57ea304c236e3f23dffb971e75"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="client_8c.html#a987b6f57ea304c236e3f23dffb971e75">receiveMessages</a> (void *arg)</td></tr>
+<tr class="memdesc:a987b6f57ea304c236e3f23dffb971e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hilo para recibir mensajes del servidor.  <a href="client_8c.html#a987b6f57ea304c236e3f23dffb971e75">Más...</a><br /></td></tr>
+<tr class="separator:a987b6f57ea304c236e3f23dffb971e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83b1a99dba1cb27bc73e07a28b6b8120"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="client_8c.html#a83b1a99dba1cb27bc73e07a28b6b8120">sendMessages</a> (void *arg)</td></tr>
+<tr class="memdesc:a83b1a99dba1cb27bc73e07a28b6b8120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hilo que se encarga de enviar mensajes al servidor.  <a href="client_8c.html#a83b1a99dba1cb27bc73e07a28b6b8120">Más...</a><br /></td></tr>
+<tr class="separator:a83b1a99dba1cb27bc73e07a28b6b8120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top"><a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> (int argc, char *argv[])</td></tr>
+<tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af821795acb17a9f4ab5bd46a4885ed70"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="client_8c.html#af821795acb17a9f4ab5bd46a4885ed70">isCommand</a> (char linea[MAX_MESSAGE])</td></tr>
+<tr class="memdesc:af821795acb17a9f4ab5bd46a4885ed70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detecta si es un comando y llama la funcion para ejecutarlo.  <a href="client_8c.html#af821795acb17a9f4ab5bd46a4885ed70">Más...</a><br /></td></tr>
+<tr class="separator:af821795acb17a9f4ab5bd46a4885ed70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a49c6e6c75d41d6360253beb518425934"><td class="memItemLeft" align="right" valign="top"><a id="a49c6e6c75d41d6360253beb518425934" name="a49c6e6c75d41d6360253beb518425934"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>finished</b></td></tr>
+<tr class="memdesc:a49c6e6c75d41d6360253beb518425934"><td class="mdescLeft">&#160;</td><td class="mdescRight">bandera para finalizar <br /></td></tr>
+<tr class="separator:a49c6e6c75d41d6360253beb518425934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e77dd608334bc5c600e70bc37bc662a"><td class="memItemLeft" align="right" valign="top"><a id="a6e77dd608334bc5c600e70bc37bc662a" name="a6e77dd608334bc5c600e70bc37bc662a"></a>
+<a class="el" href="structmessage.html">message</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ms</b></td></tr>
+<tr class="memdesc:a6e77dd608334bc5c600e70bc37bc662a"><td class="mdescLeft">&#160;</td><td class="mdescRight">mensaje del usuario <br /></td></tr>
+<tr class="separator:a6e77dd608334bc5c600e70bc37bc662a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a339d22b3e442946380f98ed19e320db2"><td class="memItemLeft" align="right" valign="top"><a id="a339d22b3e442946380f98ed19e320db2" name="a339d22b3e442946380f98ed19e320db2"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>s</b></td></tr>
+<tr class="memdesc:a339d22b3e442946380f98ed19e320db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">socket del usuario <br /></td></tr>
+<tr class="separator:a339d22b3e442946380f98ed19e320db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p >Pograma cliente. </p>
+<dl class="section author"><dt>Autor</dt><dd>Jesus David Cardenas Sandoval <a href="#" onclick="location.href='mai'+'lto:'+'jca'+'rd'+'ena'+'ss'+'@un'+'ic'+'auc'+'a.'+'edu'+'.c'+'o'; return false;">jcard<span class="obfuscator">.nosp@m.</span>enas<span class="obfuscator">.nosp@m.</span>s@uni<span class="obfuscator">.nosp@m.</span>cauc<span class="obfuscator">.nosp@m.</span>a.edu<span class="obfuscator">.nosp@m.</span>.co</a> </dd></dl>
+</div><h2 class="groupheader">Documentación de las funciones</h2>
+<a id="aa412090fdce1edcdab71ae33a3708832" name="aa412090fdce1edcdab71ae33a3708832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa412090fdce1edcdab71ae33a3708832">&#9670;&nbsp;</a></span>changeStateMs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void changeStateMs </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>linea</em>[MAX_MESSAGE]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cambia el estado del mensaje segun el comando ingresado. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>comando a realizar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af821795acb17a9f4ab5bd46a4885ed70" name="af821795acb17a9f4ab5bd46a4885ed70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af821795acb17a9f4ab5bd46a4885ed70">&#9670;&nbsp;</a></span>isCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int isCommand </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>linea</em>[MAX_MESSAGE]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Detecta si es un comando y llama la funcion para ejecutarlo. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">linea</td><td>mensaje ingresado. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>1 si es un comando </dd></dl>
+
+</div>
+</div>
+<a id="a987b6f57ea304c236e3f23dffb971e75" name="a987b6f57ea304c236e3f23dffb971e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a987b6f57ea304c236e3f23dffb971e75">&#9670;&nbsp;</a></span>receiveMessages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * receiveMessages </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hilo para recibir mensajes del servidor. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">socket</td><td>socket del cliente. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a83b1a99dba1cb27bc73e07a28b6b8120" name="a83b1a99dba1cb27bc73e07a28b6b8120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83b1a99dba1cb27bc73e07a28b6b8120">&#9670;&nbsp;</a></span>sendMessages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * sendMessages </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hilo que se encarga de enviar mensajes al servidor. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arg</td><td>socket del cliente. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

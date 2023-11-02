@@ -1,0 +1,91 @@
+\hypertarget{chat_8h}{}\doxysection{Referencia del Archivo chat.\+h}
+\label{chat_8h}\index{chat.h@{chat.h}}
+
+
+Definiciones para el chat.  
+
+
+Gráfico de los archivos que directa o indirectamente incluyen a este archivo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{chat_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{chat_8h_a0a856c3efd38d3898d269ceed56ab09e}\label{chat_8h_a0a856c3efd38d3898d269ceed56ab09e}} 
+\#define {\bfseries BUFS}~20
+\item 
+\mbox{\Hypertarget{chat_8h_a8cea0c1cc1fc60a52e79998580bbf1a7}\label{chat_8h_a8cea0c1cc1fc60a52e79998580bbf1a7}} 
+\#define {\bfseries MAX\+\_\+\+MESSAGE}~200
+\item 
+\mbox{\Hypertarget{chat_8h_a842ed03f27719bc87666bfd1f75415b8}\label{chat_8h_a842ed03f27719bc87666bfd1f75415b8}} 
+\#define {\bfseries MAX\+\_\+\+LINE}~170
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumeraciones}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{chat_8h_a015eb90e0de9f16e87bd149d4b9ce959}\label{chat_8h_a015eb90e0de9f16e87bd149d4b9ce959}} 
+enum {\bfseries status} \{ \newline
+{\bfseries ONLINE}
+, {\bfseries PRIVATE}
+, {\bfseries EXIT}
+, {\bfseries OFFLINE}
+, \newline
+{\bfseries ONLYME}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{chat_8h_af821795acb17a9f4ab5bd46a4885ed70}{is\+Command}} (char linea\mbox{[}MAX\+\_\+\+MESSAGE\mbox{]})
+\begin{DoxyCompactList}\small\item\em Detecta si es un comando y llama la funcion para ejecutarlo. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{chat_8h_a6d5c68cbed6d3381a9b74824a41eb6bc}{exists\+Username}} (char username\mbox{[}BUFS\mbox{]})
+\begin{DoxyCompactList}\small\item\em verifica si existe el usuario del cliente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Definiciones para el chat. 
+
+\begin{DoxyAuthor}{Autor}
+Jesus David Cardenas Sandoval \href{mailto:jcardenass@unicauca.edu.co}{\texttt{ jcardenass@unicauca.\+edu.\+co}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{chat_8h_a6d5c68cbed6d3381a9b74824a41eb6bc}\label{chat_8h_a6d5c68cbed6d3381a9b74824a41eb6bc}} 
+\index{chat.h@{chat.h}!existsUsername@{existsUsername}}
+\index{existsUsername@{existsUsername}!chat.h@{chat.h}}
+\doxysubsubsection{\texorpdfstring{existsUsername()}{existsUsername()}}
+{\footnotesize\ttfamily int exists\+Username (\begin{DoxyParamCaption}\item[{char}]{username\mbox{[}\+BUFS\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+verifica si existe el usuario del cliente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em username} & nombre de usuario del cliente. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{chat_8h_af821795acb17a9f4ab5bd46a4885ed70}\label{chat_8h_af821795acb17a9f4ab5bd46a4885ed70}} 
+\index{chat.h@{chat.h}!isCommand@{isCommand}}
+\index{isCommand@{isCommand}!chat.h@{chat.h}}
+\doxysubsubsection{\texorpdfstring{isCommand()}{isCommand()}}
+{\footnotesize\ttfamily int is\+Command (\begin{DoxyParamCaption}\item[{char}]{linea\mbox{[}\+MAX\+\_\+\+MESSAGE\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Detecta si es un comando y llama la funcion para ejecutarlo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em linea} & mensaje ingresado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+1 si es un comando 
+\end{DoxyReturn}

@@ -1,0 +1,201 @@
+\hypertarget{server_8c}{}\doxysection{Referencia del Archivo server.\+c}
+\label{server_8c}\index{server.c@{server.c}}
+
+
+Proceso servidor.  
+
+
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}concurrencia.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}chat.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$netinet/ip.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$semaphore.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Dependencia gráfica adjunta para server.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{server_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structclient}{client}}
+\begin{DoxyCompactList}\small\item\em Cliente conectado. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structmessage}{message}}
+\begin{DoxyCompactList}\small\item\em Estructua de un mensaje. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{defines}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{server_8c_a0a856c3efd38d3898d269ceed56ab09e}\label{server_8c_a0a856c3efd38d3898d269ceed56ab09e}} 
+\#define {\bfseries BUFS}~20
+\item 
+\mbox{\Hypertarget{server_8c_a8cea0c1cc1fc60a52e79998580bbf1a7}\label{server_8c_a8cea0c1cc1fc60a52e79998580bbf1a7}} 
+\#define {\bfseries MAX\+\_\+\+MESSAGE}~200
+\end{DoxyCompactItemize}
+\doxysubsection*{Funciones}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{server_8c_a77eda37e4345908f4a7afec15f238a55}{register\+\_\+client}} (int c)
+\begin{DoxyCompactList}\small\item\em Adiciona un nuevo cliente al arreglo de clientes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{server_8c_a18884d925809c4d4e16aebc097e3d1b4}{remove\+\_\+client}} (int id)
+\begin{DoxyCompactList}\small\item\em Elimina un cliente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{server_8c_af675374954cdabdf63d036fe3c12d348}{signal\+\_\+handler}} (int signum)
+\begin{DoxyCompactList}\small\item\em Subrutina manejadora de señal. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{server_8c_ae1b5f4bb3407d493369655b3cbadca20}{client\+\_\+handler}} (void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em Hilo que atiende a un cliente. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{server_8c_a90bed14d0217b3f7c10554cdd75e6298}{execute\+Action}} (int id, int socket, \mbox{\hyperlink{structmessage}{message}} $\ast$\mbox{\hyperlink{client_8c_a6e77dd608334bc5c600e70bc37bc662a}{ms}})
+\begin{DoxyCompactList}\small\item\em SI el estado del mensaje corresponde a un commando , lo ejecutara , si no actura por defecto. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{server_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{server_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{server_8c_a6d5c68cbed6d3381a9b74824a41eb6bc}{exists\+Username}} (char username\mbox{[}BUFS\mbox{]})
+\begin{DoxyCompactList}\small\item\em verifica si existe el usuario del cliente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{server_8c_a49c6e6c75d41d6360253beb518425934}\label{server_8c_a49c6e6c75d41d6360253beb518425934}} 
+int {\bfseries finished}
+\begin{DoxyCompactList}\small\item\em Indica la terminacion del servidor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{server_8c_a7951c2a761d79b4b7c4ab8d196c5c5ce}\label{server_8c_a7951c2a761d79b4b7c4ab8d196c5c5ce}} 
+\mbox{\hyperlink{structclient}{client}} $\ast$ {\bfseries clients}
+\begin{DoxyCompactList}\small\item\em Arreglo de clientes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{server_8c_a897245da86d59176980f3c9901120524}\label{server_8c_a897245da86d59176980f3c9901120524}} 
+int {\bfseries maxclients}
+\begin{DoxyCompactList}\small\item\em Capacidad del arreglo de clientes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{server_8c_a3f810e1fd7f6f8e9b4703dc845f5aba4}\label{server_8c_a3f810e1fd7f6f8e9b4703dc845f5aba4}} 
+int {\bfseries nclients}
+\begin{DoxyCompactList}\small\item\em Cantidad de clientes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{server_8c_a953198dc69ff02868b4513ae96d5f262}\label{server_8c_a953198dc69ff02868b4513ae96d5f262}} 
+\mbox{\hyperlink{concurrencia_8h_ac6dd29c743e974e9c801a0eeb67e7a1b}{semaphore}} {\bfseries mutex}
+\begin{DoxyCompactList}\small\item\em Semaforo para garantizar la exclusion mutua. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{server_8c_a87578292c573f2bc4c7978f139ba184e}\label{server_8c_a87578292c573f2bc4c7978f139ba184e}} 
+\mbox{\hyperlink{concurrencia_8h_ac6dd29c743e974e9c801a0eeb67e7a1b}{semaphore}} {\bfseries rem}
+\begin{DoxyCompactList}\small\item\em Semaforo para garantizar la eliminacion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{server_8c_a9e6ed5488b8c49a4cdf0180faa465ada}\label{server_8c_a9e6ed5488b8c49a4cdf0180faa465ada}} 
+\mbox{\hyperlink{concurrencia_8h_ac6dd29c743e974e9c801a0eeb67e7a1b}{semaphore}} {\bfseries lec}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descripción detallada}
+Proceso servidor. 
+
+\begin{DoxyAuthor}{Autor}
+Jesus David Cardenas Sandoval \href{mailto:jcardenass@unicauca.edu.co}{\texttt{ jcardenass@unicauca.\+edu.\+co}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Documentación de las funciones}
+\mbox{\Hypertarget{server_8c_ae1b5f4bb3407d493369655b3cbadca20}\label{server_8c_ae1b5f4bb3407d493369655b3cbadca20}} 
+\index{server.c@{server.c}!client\_handler@{client\_handler}}
+\index{client\_handler@{client\_handler}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{client\_handler()}{client\_handler()}}
+{\footnotesize\ttfamily void $\ast$ client\+\_\+handler (\begin{DoxyParamCaption}\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+Hilo que atiende a un cliente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em arg} & Cliente (client$\ast$) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{server_8c_a90bed14d0217b3f7c10554cdd75e6298}\label{server_8c_a90bed14d0217b3f7c10554cdd75e6298}} 
+\index{server.c@{server.c}!executeAction@{executeAction}}
+\index{executeAction@{executeAction}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{executeAction()}{executeAction()}}
+{\footnotesize\ttfamily int execute\+Action (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{socket,  }\item[{\mbox{\hyperlink{structmessage}{message}} $\ast$}]{ms }\end{DoxyParamCaption})}
+
+
+
+SI el estado del mensaje corresponde a un commando , lo ejecutara , si no actura por defecto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & id del usuario \\
+\hline
+{\em socket} & socket del usuario \\
+\hline
+{\em ms} & mensaje recibido por el servidor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+0 si se realizo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{server_8c_a6d5c68cbed6d3381a9b74824a41eb6bc}\label{server_8c_a6d5c68cbed6d3381a9b74824a41eb6bc}} 
+\index{server.c@{server.c}!existsUsername@{existsUsername}}
+\index{existsUsername@{existsUsername}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{existsUsername()}{existsUsername()}}
+{\footnotesize\ttfamily int exists\+Username (\begin{DoxyParamCaption}\item[{char}]{username\mbox{[}\+BUFS\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+verifica si existe el usuario del cliente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em username} & nombre de usuario del cliente. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{server_8c_a77eda37e4345908f4a7afec15f238a55}\label{server_8c_a77eda37e4345908f4a7afec15f238a55}} 
+\index{server.c@{server.c}!register\_client@{register\_client}}
+\index{register\_client@{register\_client}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{register\_client()}{register\_client()}}
+{\footnotesize\ttfamily int register\+\_\+client (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Adiciona un nuevo cliente al arreglo de clientes. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em Socket} & del cliente. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Posicion del cliente en el arreglo, -\/1 si no se adicion. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{server_8c_a18884d925809c4d4e16aebc097e3d1b4}\label{server_8c_a18884d925809c4d4e16aebc097e3d1b4}} 
+\index{server.c@{server.c}!remove\_client@{remove\_client}}
+\index{remove\_client@{remove\_client}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{remove\_client()}{remove\_client()}}
+{\footnotesize\ttfamily int remove\+\_\+client (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Elimina un cliente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em id} & Identificador del cliente (posicion en el arreglo de clientes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+0 si se elimino correctamente, -\/1 si ocurrio un error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{server_8c_af675374954cdabdf63d036fe3c12d348}\label{server_8c_af675374954cdabdf63d036fe3c12d348}} 
+\index{server.c@{server.c}!signal\_handler@{signal\_handler}}
+\index{signal\_handler@{signal\_handler}!server.c@{server.c}}
+\doxysubsubsection{\texorpdfstring{signal\_handler()}{signal\_handler()}}
+{\footnotesize\ttfamily void signal\+\_\+handler (\begin{DoxyParamCaption}\item[{int}]{signum }\end{DoxyParamCaption})}
+
+
+
+Subrutina manejadora de señal. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em signum} & Numero de la señal recibida. \\
+\hline
+\end{DoxyParams}
